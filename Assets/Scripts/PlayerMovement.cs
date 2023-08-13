@@ -21,8 +21,8 @@ public class PlayerMovement : MonoBehaviour
 
     void Update()
     {
-        var x = Input.GetAxis("Horizontal");
-        var y = Input.GetAxis("Vertical");
+        float x = Input.GetAxis("Horizontal");
+        float y = Input.GetAxis("Vertical");
 
         var input = new Vector3();
         input += transform.forward * y;
