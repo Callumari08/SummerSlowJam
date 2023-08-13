@@ -237,11 +237,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 37d7df043ea29484e9277520a240c7f8, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  pickup_mask:
+  pickupMask:
     serializedVersion: 2
-    m_Bits: 8
-  pickup_point: {fileID: 97613319270652635}
-  pickup_range: 2
+    m_Bits: 0
+  pickupPoint: {fileID: 0}
+  pickupRange: 2
   cam: {fileID: 4016067658267898682}
 --- !u!114 &9006215193658172169
 MonoBehaviour:
@@ -255,8 +255,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ec2a47e851528e847b6356829f6fbb14, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order_console_mask:
+  orderConsoleMask:
     serializedVersion: 2
     m_Bits: 64
-  interaction_range: 2
+  interactionRange: 2
   cam: {fileID: 4016067658267898682}

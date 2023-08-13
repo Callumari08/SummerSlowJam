@@ -4,34 +4,34 @@ using UnityEngine;
 
 public class OrderConsole : MonoBehaviour
 {
-    public bool order_started;
+    public bool orderStarted;
     public List<GameObject> NPC_prefab;
-    public Transform NPC_spawn_location;
-    public List<string> order_materials;
+    public Transform NPC_spawnLocation;
+    public List<string> orderMaterials;
 
     int NPC_number = 0;
 
     public void StartOrder()
     {
-        if (!order_started)
+        if (!orderStarted)
         {
-            Instantiate(NPC_prefab[NPC_number], NPC_spawn_location);
-            order_started = true;
+            Instantiate(NPC_prefab[NPC_number], NPC_spawnLocation);
+            orderStarted = true;
         }
     }
 
     public void EndOrder()
     {
-        if (order_started)
+        if (orderStarted)
         {
-            Destroy(NPC_spawn_location.GetChild(0).gameObject);
+            Destroy(NPC_spawnLocation.GetChild(0).gameObject);
             NPC_number += 1;
-            order_started = false;
+            orderStarted = false;
         }
     }
 
     public void SetMaterials(List<string> i)
     {
-        order_materials = i;
+        orderMaterials = i;
     }
 }
