@@ -5,9 +5,9 @@ using UnityEngine;
 public class OrderConsole : MonoBehaviour
 {
     public bool order_started;
-    public GameObject[] NPC_prefab;
+    public List<GameObject> NPC_prefab;
     public Transform NPC_spawn_location;
-    public string[] order_materials;
+    public List<string> order_materials;
 
     int NPC_number = 0;
 
@@ -30,7 +30,7 @@ public class OrderConsole : MonoBehaviour
         }
     }
 
-    public void set_materials(string[] i)
+    public void set_materials(List<string> i)
     {
         order_materials = i;
     }

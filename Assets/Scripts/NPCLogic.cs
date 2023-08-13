@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class NPCLogic : MonoBehaviour
 {
-    public string[] wanted_materials;
+    public List<string> wanted_materials;
     
     public GameObject text_bubble;
 
