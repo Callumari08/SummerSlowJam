@@ -150,6 +150,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b27617247ad90204f998c3ca43b1fdb2, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  order_stated: 0
-  NPC_prefab: {fileID: 5127791932047538753, guid: 4b1cad49be59d3247bc364455ee57778, type: 3}
-  NPC_spawn_location: {fileID: 5141871155718443537}
+  orderStarted: 0
+  NPC_prefab:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  NPC_spawnLocation: {fileID: 5141871155718443537}
+  orderMaterials: []
