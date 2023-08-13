@@ -11,7 +11,7 @@ public class OrderConsole : MonoBehaviour
 
     int NPC_number = 0;
 
-    public void start_order()
+    public void StartOrder()
     {
         if (!order_started)
         {
@@ -20,7 +20,7 @@ public class OrderConsole : MonoBehaviour
         }
     }
 
-    public void end_order()
+    public void EndOrder()
     {
         if (order_started)
         {
@@ -30,7 +30,7 @@ public class OrderConsole : MonoBehaviour
         }
     }
 
-    public void set_materials(List<string> i)
+    public void SetMaterials(List<string> i)
     {
         order_materials = i;
     }

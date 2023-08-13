@@ -11,6 +11,6 @@ public class NPCLogic : MonoBehaviour
     void Awake()
     {
         text_bubble.SetActive(true);
-        FindObjectOfType<OrderConsole>().set_materials(wanted_materials);
+        FindObjectOfType<OrderConsole>().SetMaterials(wanted_materials);
     }
 }
