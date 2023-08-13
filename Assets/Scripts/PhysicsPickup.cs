@@ -12,27 +12,33 @@ public class PhysicsPickup : MonoBehaviour
 
     void Update()
     {
-        if(Input.GetMouseButtonDown(0))
-        {
-            Ray camera_ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        Ray camera_ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
+        if(Input.GetMouseButton(0))
+        {            
             if(Physics.Raycast(camera_ray, out RaycastHit hit_info, pickup_range, pickup_mask))
             {
                 current_object = hit_info.rigidbody;
                 current_object.useGravity = false;
             }
         }
-        else if(Input.GetMouseButtonUp(0))
+        else
         {
-            current_object.useGravity = true;
-            current_object = null;
+            if(current_object)
+            {
+                current_object.useGravity = true;
+                current_object = null;
+            }
         }
     }
 
     void FixedUpdate()
     {
-        if(current_object != null)
+        if(current_object)
         {
-            current_object.position = Vector3.MoveTowards(current_object.position, pickup_point.position, 5 * Time.deltaTime);
+            Vector3 direction_to_point = pickup_point.position - current_object.position;
+            float distance_to_point = direction_to_point.magnitude;
+ 
+            current_object.velocity = direction_to_point * 12f * distance_to_point;
         }
     }
 }
