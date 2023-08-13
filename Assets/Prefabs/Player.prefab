@@ -137,9 +137,10 @@ GameObject:
   - component: {fileID: 6491092687542548760}
   - component: {fileID: 8925209381070200803}
   - component: {fileID: 951974897613005735}
+  - component: {fileID: 9006215193658172169}
   m_Layer: 0
   m_Name: Player
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: -964228994112308473, guid: 0000000000000000d000000000000000, type: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -240,5 +241,22 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 8
   pickup_point: {fileID: 97613319270652635}
-  pickup_range: 10
+  pickup_range: 2
+  cam: {fileID: 4016067658267898682}
+--- !u!114 &9006215193658172169
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8715259864612594197}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ec2a47e851528e847b6356829f6fbb14, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  order_console_mask:
+    serializedVersion: 2
+    m_Bits: 64
+  interaction_range: 2
   cam: {fileID: 4016067658267898682}

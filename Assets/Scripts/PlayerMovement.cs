@@ -24,7 +24,7 @@ public class PlayerMovement : MonoBehaviour
         float x = Input.GetAxis("Horizontal");
         float y = Input.GetAxis("Vertical");
 
-        var input = new Vector3();
+        Vector3 input = new Vector3();
         input += transform.forward * y;
         input += transform.right * x;
         input = Vector3.ClampMagnitude(input, 1f);
