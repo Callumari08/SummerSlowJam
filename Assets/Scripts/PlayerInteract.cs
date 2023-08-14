@@ -14,7 +14,7 @@ public class PlayerInteract : MonoBehaviour
         {   
             if(Physics.Raycast(camera_ray, out RaycastHit hit_info, interactionRange, orderConsoleMask))
             {
-                hit_info.transform.gameObject.GetComponent<OrderConsole>().EndOrder();
+                hit_info.transform.gameObject.GetComponent<OrderConsole>().StartOrder();
             }
         }
         
