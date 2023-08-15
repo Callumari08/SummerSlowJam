@@ -4,7 +4,7 @@ using UnityEngine;
 using UnityEngine.Events;
 using UnityEngine.SceneManagement;
 
-public class GameTimeDateManager : MonoBehaviour
+public class TimeDateManager : MonoBehaviour
 {
     public float secondsBetweenIncrement = 2.5f;
     [SerializeField] TextMeshProUGUI clock;
@@ -17,7 +17,7 @@ public class GameTimeDateManager : MonoBehaviour
 
     public GameTimes dayTimes;
     public GameTimes nightTimes;
-    public GameTime currentTime;
+    public static GameTime currentTime;
     [HideInInspector] public bool isDay;
 
     bool dayLastFrame;
@@ -37,6 +37,7 @@ public class GameTimeDateManager : MonoBehaviour
 
     private void Awake()
     {
+        /*
         // Destroy self if another instance exists in the scene
         if (FindObjectsOfType<GameTimeDateManager>().Length > 1)
         {
@@ -44,18 +45,18 @@ public class GameTimeDateManager : MonoBehaviour
             return;
         }
 
-        DontDestroyOnLoad(gameObject);
+        DontDestroyOnLoad(gameObject);*/
         ConstructTimes();
         UpdateClockText();
         StartCoroutine(IncrementTime());
-
-        SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the sceneLoaded event
+        /*
+        SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the sceneLoaded event*/
     }
-
+    /*
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded; // Unsubscribe to prevent memory leaks
-    }
+    }*/
 
     private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
     {
