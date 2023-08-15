@@ -9,7 +9,7 @@ public class SubItem : MonoBehaviour
     public bool hasPart;
     public MaterialType requiredMaterial;
 
-    public UnityEvent MaterialMet;
+    public UnityEvent OnMaterialMet;
     Collider col;
 
     private void OnEnable()
@@ -23,12 +23,12 @@ public class SubItem : MonoBehaviour
         {
             if (part.materialType == requiredMaterial)
             {
-                OnMaterialMet(part);
+                MaterialMet(part);
             }
         }
     }
 
-    void OnMaterialMet(Part part)
+    void MaterialMet(Part part)
     {
         part.transform.parent = transform;
         part.transform.localPosition = new(0, 0, 0);
@@ -41,7 +41,7 @@ public class SubItem : MonoBehaviour
         Destroy(part.GetComponent<Collider>());
         Destroy(part.GetComponent<Rigidbody>());
 
-        MaterialMet.Invoke();
+        OnMaterialMet.Invoke();
     }
 
     public void SetReqMaterial(MaterialType i)
