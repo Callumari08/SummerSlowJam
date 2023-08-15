@@ -35,4 +35,17 @@ public class SubItem : MonoBehaviour
 
         MaterialMet.Invoke();
     }
+
+    public void SetReqMaterial(MaterialType i)
+    {
+        requiredMaterial = i;
+    }
+
+    public void EmptyParts()
+    {
+        foreach(Transform child in transform)
+        {
+            Destroy(child.gameObject);
+        }
+    }
 }

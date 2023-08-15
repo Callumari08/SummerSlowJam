@@ -12,18 +12,23 @@ public class PlayerInteract : MonoBehaviour
         Ray camera_ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         if(Input.GetKeyDown(KeyCode.E))
         {   
-            if(Physics.Raycast(camera_ray, out RaycastHit hit_info, interactionRange, orderConsoleMask))
+            if(!FindObjectOfType<RootItem>().itemComplete)
             {
-                hit_info.transform.gameObject.GetComponent<OrderConsole>().StartOrder();
+                if(Physics.Raycast(camera_ray, out RaycastHit hit_info, interactionRange, orderConsoleMask))
+                {
+                    hit_info.transform.gameObject.GetComponent<OrderConsole>().StartOrder();
+                }
             }
         }
-        
-        //to test end_order
-        if(Input.GetKeyDown(KeyCode.R))
-        {   
-            if(Physics.Raycast(camera_ray, out RaycastHit hit_info, interactionRange, orderConsoleMask))
+
+        if(Input.GetKeyDown(KeyCode.E))
+        {
+            if(FindObjectOfType<RootItem>().itemComplete)
             {
-                hit_info.transform.gameObject.GetComponent<OrderConsole>().EndOrder();
+                if(Physics.Raycast(camera_ray, out RaycastHit hit_info, interactionRange, orderConsoleMask))
+                {
+                    hit_info.transform.gameObject.GetComponent<OrderConsole>().StartEndOrder();
+                }
             }
         }
     }
