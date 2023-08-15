@@ -38,5 +38,7 @@ public class PlayerMovement : MonoBehaviour
 
         cam.localRotation = Quaternion.Euler(-look.y, 0, 0);
         transform.localRotation = Quaternion.Euler(0, look.x, 0);
+
+        transform.position = new Vector3(transform.position.x, 1.0f, transform.position.z);
     }
 }

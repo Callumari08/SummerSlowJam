@@ -135,7 +135,7 @@ Rigidbody:
   m_UseGravity: 1
   m_IsKinematic: 0
   m_Interpolate: 0
-  m_Constraints: 122
+  m_Constraints: 126
   m_CollisionDetection: 0
 --- !u!114 &4884874272605167476
 MonoBehaviour:
@@ -159,74 +159,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 64364473064048307}
     m_Modifications:
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: sr
-      value: 
-      objectReference: {fileID: 2953125850289177781}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: endDialogue
-      value: Thank You!
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: delay.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: visual.Array.size
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: delay.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: delay.Array.data[1]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: delay.Array.data[2]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: dialogue.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: visual.Array.data[0]
-      value: 
-      objectReference: {fileID: 21300000, guid: f1fe18e99a46d604f9a6afc41b18d5bb, type: 3}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: visual.Array.data[1]
-      value: 
-      objectReference: {fileID: 21300000, guid: 33d9bc389bf62e14398087eb9b87ea08, type: 3}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: dialogue.Array.data[0]
-      value: Test
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: dialogue.Array.data[1]
-      value: Hi
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: dialogue.Array.data[2]
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: startDialogue.Array.size
-      value: 3
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: startDialogue.Array.data[0]
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: startDialogue.Array.data[1]
-      value: 2
-      objectReference: {fileID: 0}
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: startDialogue.Array.data[2]
-      value: 3
-      objectReference: {fileID: 0}
     - target: {fileID: 4731234450231913795, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
       propertyPath: m_Name
       value: Text Bubble
@@ -279,10 +211,5 @@ PrefabInstance:
 --- !u!4 &2287587341456864675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5041044263088464792, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-  m_PrefabInstance: {fileID: 6506091352774661691}
-  m_PrefabAsset: {fileID: 0}
---- !u!212 &2953125850289177781 stripped
-SpriteRenderer:
-  m_CorrespondingSourceObject: {fileID: 8264628468304401038, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
   m_PrefabInstance: {fileID: 6506091352774661691}
   m_PrefabAsset: {fileID: 0}

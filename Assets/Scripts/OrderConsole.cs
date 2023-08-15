@@ -10,19 +10,29 @@ public class OrderConsole : MonoBehaviour
     public Transform NPC_spawnLocation;
     public UnityEvent OnOrderStarted;
     
+    TimeDateManager TDM;
     int NPC_number = 0;
+
+    void Awake()
+    {
+        TDM = FindObjectOfType<TimeDateManager>();
+    }
 
     public void StartOrder()
     {
-        if (!orderStarted)
+        if (TDM.isDay)
         {
-            Instantiate(NPC_prefab[NPC_number], NPC_spawnLocation);
-            if(!FindObjectOfType<RootItem>().itemComplete)
+            if (!orderStarted)
             {
-                orderStarted = true; 
-                OnOrderStarted.Invoke();
+                Instantiate(NPC_prefab[NPC_number], NPC_spawnLocation);
+                if(!FindObjectOfType<RootItem>().itemComplete)
+                {
+                    orderStarted = true; 
+                    OnOrderStarted.Invoke();
+                }
             }
         }
+        else return;
     }
 
     public void StartEndOrder()

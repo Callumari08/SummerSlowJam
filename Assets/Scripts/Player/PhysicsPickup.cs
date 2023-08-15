@@ -18,14 +18,12 @@ public class PhysicsPickup : MonoBehaviour
             if(Physics.Raycast(camera_ray, out RaycastHit hit_info, pickupRange, pickupMask))
             {
                 currentObject = hit_info.rigidbody;
-                currentObject.useGravity = false;
             }
         }
         else
         {
             if(currentObject)
             {
-                currentObject.useGravity = true;
                 currentObject = null;
             }
         }
