@@ -8,8 +8,9 @@ public class SubItem : MonoBehaviour
 {
     public bool hasPart;
     public MaterialType requiredMaterial;
-
+    [Space]
     public UnityEvent OnMaterialMet;
+
     Collider col;
 
     private void OnEnable()
@@ -33,6 +34,9 @@ public class SubItem : MonoBehaviour
         part.transform.parent = transform;
         part.transform.localPosition = new(0, 0, 0);
         part.transform.rotation = transform.rotation;
+
+        if (transform.TryGetComponent(out Renderer rend))
+            Destroy(rend);
 
         hasPart = true;
         col.isTrigger = false;

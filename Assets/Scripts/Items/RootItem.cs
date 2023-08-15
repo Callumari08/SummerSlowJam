@@ -8,6 +8,7 @@ public class RootItem : MonoBehaviour
 {
     public List<SubItem> subItems;
     public bool itemComplete;
+    [Space]
     public UnityEvent OnItemComplete;
 
     private void OnEnable()
