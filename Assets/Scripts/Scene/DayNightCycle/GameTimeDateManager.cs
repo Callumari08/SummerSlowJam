@@ -37,6 +37,13 @@ public class GameTimeDateManager : MonoBehaviour
 
     private void Awake()
     {
+        // Destroy self if another instance exists in the scene
+        if (FindObjectsOfType<GameTimeDateManager>().Length > 1)
+        {
+            Destroy(gameObject);
+            return;
+        }
+
         DontDestroyOnLoad(gameObject);
         ConstructTimes();
         UpdateClockText();
@@ -44,6 +51,7 @@ public class GameTimeDateManager : MonoBehaviour
 
         SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the sceneLoaded event
     }
+
 
     private void OnDestroy()
     {
@@ -82,7 +90,8 @@ public class GameTimeDateManager : MonoBehaviour
 
     void UpdateClockText()
     {
-        clock.text = $"Day {currentTime.Day}: {currentTime.Hour:00}:{currentTime.Min:00}";
+        if (clock) 
+            clock.text = $"Day {currentTime.Day}: {currentTime.Hour:00}:{currentTime.Min:00}";
     }
 
     void CheckDayNightEvents()
