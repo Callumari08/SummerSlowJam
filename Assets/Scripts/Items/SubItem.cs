@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class SubItem : MonoBehaviour
 {
     public bool hasPart;
-    public MaterialType requiredMaterial;
+    public List<MaterialType> requiredMaterials;
     [Space]
     public UnityEvent OnMaterialMet;
 
@@ -22,9 +22,12 @@ public class SubItem : MonoBehaviour
     {
         if (collider.TryGetComponent(out Part part))
         {
-            if (part.materialType == requiredMaterial)
+            foreach (MaterialType mat in requiredMaterials)
             {
-                MaterialMet(part);
+                if (part.materialType == mat)
+                {
+                    MaterialMet(part);
+                }
             }
         }
     }
@@ -46,18 +49,5 @@ public class SubItem : MonoBehaviour
         Destroy(part.GetComponent<Rigidbody>());
 
         OnMaterialMet.Invoke();
-    }
-
-    public void SetReqMaterial(MaterialType i)
-    {
-        requiredMaterial = i;
-    }
-
-    public void EmptyParts()
-    {
-        foreach(Transform child in transform)
-        {
-            Destroy(child.gameObject);
-        }
     }
 }
