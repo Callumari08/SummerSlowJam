@@ -3,12 +3,19 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
 
+[RequireComponent(typeof(Collider))]
 public class SubItem : MonoBehaviour
 {
     public bool hasPart;
     public MaterialType requiredMaterial;
 
     public UnityEvent MaterialMet;
+    Collider col;
+
+    private void OnEnable()
+    {
+        col = GetComponent<Collider>();
+    }
 
     void OnTriggerEnter(Collider collider)
     {
@@ -28,8 +35,9 @@ public class SubItem : MonoBehaviour
         part.transform.rotation = transform.rotation;
 
         hasPart = true;
+        col.isTrigger = false;
         transform.root.GetComponent<RootItem>().CheckChildren();
-
+        
         Destroy(part.GetComponent<Collider>());
         Destroy(part.GetComponent<Rigidbody>());
 
