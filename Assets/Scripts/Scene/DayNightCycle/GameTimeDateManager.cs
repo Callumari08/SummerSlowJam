@@ -52,7 +52,6 @@ public class GameTimeDateManager : MonoBehaviour
         SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the sceneLoaded event
     }
 
-
     private void OnDestroy()
     {
         SceneManager.sceneLoaded -= OnSceneLoaded; // Unsubscribe to prevent memory leaks

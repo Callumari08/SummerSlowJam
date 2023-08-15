@@ -13,7 +13,7 @@ public class NPCDialogue : MonoBehaviour
     public TMP_Text txt;
     public SpriteRenderer sr;
 
-    void Awake() { StartCoroutine(NextStart()); }
+    void Awake() => StartCoroutine(NextStart());
 
     IEnumerator NextStart()
     {
