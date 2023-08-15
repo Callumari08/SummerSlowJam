@@ -149,9 +149,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e43621cc555b6a4e851d22a795a7f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanted_materials:
-  - wood
-  text_bubble: {fileID: 2009448995540581240}
+  wanted_material: 0
 --- !u!1001 &6506091352774661691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -164,6 +162,10 @@ PrefabInstance:
       propertyPath: sr
       value: 
       objectReference: {fileID: 2953125850289177781}
+    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
+      propertyPath: endDialogue
+      value: Thank You!
+      objectReference: {fileID: 0}
     - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
       propertyPath: delay.Array.size
       value: 3
@@ -206,6 +208,22 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
       propertyPath: dialogue.Array.data[2]
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
+      propertyPath: startDialogue.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
+      propertyPath: startDialogue.Array.data[0]
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
+      propertyPath: startDialogue.Array.data[1]
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
+      propertyPath: startDialogue.Array.data[2]
       value: 3
       objectReference: {fileID: 0}
     - target: {fileID: 4731234450231913795, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
@@ -257,11 +275,6 @@ PrefabInstance:
     m_AddedGameObjects: []
     m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
---- !u!1 &2009448995540581240 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4731234450231913795, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-  m_PrefabInstance: {fileID: 6506091352774661691}
-  m_PrefabAsset: {fileID: 0}
 --- !u!4 &2287587341456864675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5041044263088464792, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}

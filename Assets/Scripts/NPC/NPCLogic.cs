@@ -3,13 +3,11 @@ using UnityEngine;
 
 public class NPCLogic : MonoBehaviour
 {
-    public List<string> wanted_materials;
+    public MaterialType wanted_material;
     
-    public GameObject text_bubble;
-
-    void Awake()
+    void Update()
     {
-        text_bubble.SetActive(true);
-        FindObjectOfType<OrderConsole>().SetMaterials(wanted_materials);
+        if(FindObjectOfType<OrderConsole>().orderStarted) FindObjectOfType<SubItem>().SetReqMaterial(wanted_material);
+        else return;
     }
 }

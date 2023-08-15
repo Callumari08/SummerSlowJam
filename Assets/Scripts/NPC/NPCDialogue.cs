@@ -5,29 +5,29 @@ using TMPro;
 
 public class NPCDialogue : MonoBehaviour
 {
-    public List<string> dialogue;
+    public List<string> startDialogue;
+    public string endDialogue;
     public List<int> delay;
     public List<Sprite> visual;
 
     public TMP_Text txt;
     public SpriteRenderer sr;
-    int current_dialogue;
 
-    void Awake()
+    void Awake() { StartCoroutine(NextStart()); }
+
+    IEnumerator NextStart()
     {
-        StartCoroutine(Next(delay[current_dialogue]));
+        for(int i = 0; i < startDialogue.Count; i++)
+        {
+            txt.text = startDialogue[i];
+            sr.sprite = visual[i];
+            yield return new WaitForSeconds(delay[i]);
+        }
     }
 
-    void Update()
+    public void NextEnd()
     {
-        txt.text = dialogue[current_dialogue];
-        sr.sprite = visual[current_dialogue];
-    }
-
-    IEnumerator Next(int d)
-    {
-        yield return new WaitForSeconds(d);
-        current_dialogue += 1;
-        if(current_dialogue < (dialogue.Count -1)) StartCoroutine(Next(delay[current_dialogue]));
+        txt.text = endDialogue;
+        sr.sprite = visual[0];
     }
 }
