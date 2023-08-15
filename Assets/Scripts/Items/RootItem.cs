@@ -35,4 +35,23 @@ public class RootItem : MonoBehaviour
             OnItemComplete.Invoke();
         }
     }
+
+    public void SetReqMaterial(List<MaterialType> mat)
+    {
+        foreach (Transform child in transform)
+        {
+            child.GetComponent<SubItem>().requiredMaterials = mat;
+        }
+    }
+    
+    public void EmptyParts()
+    {
+        foreach (Transform child in transform)
+        {
+            foreach (Transform subChild in child.transform)
+            {
+                Destroy(subChild.gameObject);
+            }
+        }
+    }
 }

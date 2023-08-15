@@ -8,8 +8,8 @@ public class OrderConsole : MonoBehaviour
     public bool orderStarted;
     public List<GameObject> NPC_prefab;
     public Transform NPC_spawnLocation;
-    public MaterialType orderMaterial;
-
+    public UnityEvent OnOrderStarted;
+    
     int NPC_number = 0;
 
     public void StartOrder()
@@ -17,7 +17,11 @@ public class OrderConsole : MonoBehaviour
         if (!orderStarted)
         {
             Instantiate(NPC_prefab[NPC_number], NPC_spawnLocation);
-            orderStarted = true; 
+            if(!FindObjectOfType<RootItem>().itemComplete)
+            {
+                orderStarted = true; 
+                OnOrderStarted.Invoke();
+            }
         }
     }
 
@@ -25,8 +29,11 @@ public class OrderConsole : MonoBehaviour
     {
         if (orderStarted)
         {
-            Invoke("EndOrder", 3);
-            FindObjectOfType<NPCDialogue>().NextEnd();
+            if(FindObjectOfType<RootItem>().itemComplete)
+            {
+                Invoke("EndOrder", 3);
+                FindObjectOfType<NPCDialogue>().NextEnd();
+            }
         }
     }
 
@@ -36,6 +43,7 @@ public class OrderConsole : MonoBehaviour
         NPC_number += 1;
         orderStarted = false;
         FindObjectOfType<RootItem>().itemComplete = false;
-        FindObjectOfType<SubItem>().EmptyParts();
+        FindObjectOfType<RootItem>().EmptyParts();
+        Destroy(FindObjectOfType<RootItem>().gameObject);
     }
 }

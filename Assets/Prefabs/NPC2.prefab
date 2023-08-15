@@ -149,8 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e43621cc555b6a4e851d22a795a7f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanted_material: 1
-  text_bubble: {fileID: 6323212313321142049}
+  wantedMaterials: 
+  shape: {fileID: 982528363466902449, guid: c9fbd4a61054c924bb78e625b24e1715, type: 3}
 --- !u!1001 &1614585213760313954
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -211,10 +211,5 @@ PrefabInstance:
 --- !u!4 &6025055160129075706 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5041044263088464792, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-  m_PrefabInstance: {fileID: 1614585213760313954}
-  m_PrefabAsset: {fileID: 0}
---- !u!1 &6323212313321142049 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 4731234450231913795, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
   m_PrefabInstance: {fileID: 1614585213760313954}
   m_PrefabAsset: {fileID: 0}
