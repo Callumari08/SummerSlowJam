@@ -15,8 +15,8 @@ public class TimeDateManager : MonoBehaviour
     [Space]
     public UnityEvent OnNight;
 
-    public GameTimes dayTimes;
-    public GameTimes nightTimes;
+    public static GameTimes dayTimes;
+    public static GameTimes nightTimes;
     public static GameTime currentTime;
     [HideInInspector] public bool isDay;
 
@@ -37,30 +37,9 @@ public class TimeDateManager : MonoBehaviour
 
     private void Awake()
     {
-        /*
-        // Destroy self if another instance exists in the scene
-        if (FindObjectsOfType<GameTimeDateManager>().Length > 1)
-        {
-            Destroy(gameObject);
-            return;
-        }
-
-        DontDestroyOnLoad(gameObject);*/
         ConstructTimes();
         UpdateClockText();
         StartCoroutine(IncrementTime());
-        /*
-        SceneManager.sceneLoaded += OnSceneLoaded; // Subscribe to the sceneLoaded event*/
-    }
-    /*
-    private void OnDestroy()
-    {
-        SceneManager.sceneLoaded -= OnSceneLoaded; // Unsubscribe to prevent memory leaks
-    }*/
-
-    private void OnSceneLoaded(Scene scene, LoadSceneMode mode)
-    {
-        UpdateClockText();
     }
 
     IEnumerator IncrementTime()
