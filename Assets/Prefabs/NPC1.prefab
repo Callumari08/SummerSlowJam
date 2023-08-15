@@ -149,7 +149,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e43621cc555b6a4e851d22a795a7f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wanted_material: 0
+  wantedMaterials: 0000000002000000
+  shape: {fileID: 982528363466902449, guid: c9fbd4a61054c924bb78e625b24e1715, type: 3}
 --- !u!1001 &6506091352774661691
 PrefabInstance:
   m_ObjectHideFlags: 0
