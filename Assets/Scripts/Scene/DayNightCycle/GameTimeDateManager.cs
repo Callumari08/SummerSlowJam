@@ -101,12 +101,10 @@ public class GameTimeDateManager : MonoBehaviour
         if (isDay && !dayLastFrame)
         {
             OnDay.Invoke();
-            print(isDay);
         }
         else if (!isDay && dayLastFrame)
         {
             OnNight.Invoke();
-            print(isDay);
         }
 
         dayLastFrame = isDay;
