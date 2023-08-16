@@ -34,11 +34,12 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         bounds = capsuleCollider.bounds;
+
+        CameraRotation();
     }
 
     private void FixedUpdate()
     {
-        CameraRotation();
         Move();
     }
 

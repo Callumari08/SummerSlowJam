@@ -9,15 +9,6 @@ public class _SceneManager : MonoBehaviour
     {
         DontDestroyOnLoad(this.gameObject);
     }
-    
-    public void Update()
-    {
-        //for testing manager
-        if (Input.GetKeyDown(KeyCode.I))
-        {
-            Change_Scene(scenes[1]);
-        }
-    }
 
     public void Change_Scene(string i)
     {

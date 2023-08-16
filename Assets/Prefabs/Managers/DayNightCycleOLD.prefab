@@ -200,7 +200,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 574ba832699424e4b8007eb0070fc25c, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 75e18423cbe6f084aac95248d13d1e55, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -236,7 +236,7 @@ GameObject:
   - component: {fileID: 3274523096207287086}
   - component: {fileID: 7206342861469004870}
   m_Layer: 0
-  m_Name: DayNightCycle
+  m_Name: DayNightCycleOLD
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

@@ -159,6 +159,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 64364473064048307}
     m_Modifications:
+    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
+      propertyPath: visual.Array.size
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4731234450231913795, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
       propertyPath: m_Name
       value: Text Bubble
