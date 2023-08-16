@@ -88,7 +88,7 @@ public class PlayerController : MonoBehaviour
             Vector3 snapToSurface = vel.normalized * (hit.distance - skinWidth);
             Vector3 leftover = vel - snapToSurface;
             float angle = Vector3.Angle(Vector3.up, hit.normal);
-            float scale = 1f;
+            float scale;
 
             if (snapToSurface.magnitude <= skinWidth)
                 snapToSurface = Vector3.zero;
