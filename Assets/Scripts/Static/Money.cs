@@ -1,5 +1,4 @@
 using System;
-using System.ComponentModel;
 
 public static class Money
 {
@@ -10,10 +9,7 @@ public static class Money
     /// </summary>
     public static float Current
     {
-        get
-        {
-            return _Current;
-        }
+        get => _Current;
         set
         {
             OnMoneyChange?.Invoke(typeof(Money), EventArgs.Empty);
@@ -26,8 +22,9 @@ public static class Money
 
     static float _Current = DefaultCurrent;
 
-    public static void ResetMoney()
-    {
+    /// <summary>
+    /// Change Current To Default Current
+    /// </summary>
+    public static void ResetMoney() => 
         _Current = DefaultCurrent;
-    }
 }
