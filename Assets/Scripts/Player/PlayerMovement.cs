@@ -34,7 +34,10 @@ public class PlayerController : MonoBehaviour
     private void Update()
     {
         bounds = capsuleCollider.bounds;
+    }
 
+    private void FixedUpdate()
+    {
         CameraRotation();
         Move();
     }
@@ -47,7 +50,7 @@ public class PlayerController : MonoBehaviour
         Vector3 moveDirection = cam.transform.forward * z + cam.transform.right * x;
 
         moveDirection = CollideAndSlide(moveDirection, transform.position, 0, false, moveDirection);
-        moveDirection += CollideAndSlide(Vector3.down * gravity, transform.position + moveDirection, 0, true, Vector3.down * gravity);
+        moveDirection += CollideAndSlide(Vector3.down * gravity, transform.position + moveDirection, 0, true, Vector3.down * gravity).normalized;
 
         rb.velocity = moveDirection * moveSpeed * Time.deltaTime;
     }
