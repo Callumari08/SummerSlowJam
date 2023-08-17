@@ -2,7 +2,7 @@ using UnityEngine;
 
 public class PlayerInteract : MonoBehaviour
 {
-    public LayerMask orderConsoleMask;
+    public LayerMask InteractableMask;
     public float interactionRange;
 
     public Camera cam;
@@ -10,20 +10,21 @@ public class PlayerInteract : MonoBehaviour
     void Update()
     {
         Ray camera_ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
-        if(Input.GetKeyDown(KeyCode.E))
-        {
-            if(Physics.Raycast(camera_ray, out RaycastHit hit_info, interactionRange, orderConsoleMask))
-            {
-                hit_info.transform.gameObject.GetComponent<OrderConsole>().StartOrder();
-            }
-        }
 
         if(Input.GetKeyDown(KeyCode.E))
         {
-            
-            if(Physics.Raycast(camera_ray, out RaycastHit hit_info, interactionRange, orderConsoleMask))
+            if(Physics.Raycast(camera_ray, out RaycastHit hit_info, interactionRange, InteractableMask))
             {
-                hit_info.transform.gameObject.GetComponent<OrderConsole>().StartEndOrder();
+                if ((hit_info.transform.gameObject.GetComponent("OrderConsole") as OrderConsole) != null)
+                {
+                    hit_info.transform.gameObject.GetComponent<OrderConsole>().StartOrder();
+                    hit_info.transform.gameObject.GetComponent<OrderConsole>().StartEndOrder();
+                }
+
+                if ((hit_info.transform.gameObject.GetComponent("Door") as Door) != null)
+                {
+                    hit_info.transform.gameObject.GetComponent<Door>().Open();
+                }
             }
         }
     }

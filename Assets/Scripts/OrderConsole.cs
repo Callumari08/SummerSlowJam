@@ -10,16 +10,14 @@ public class OrderConsole : MonoBehaviour
     public Transform NPC_spawnLocation;
     public UnityEvent OnOrderStarted;
     
-    int NPC_number = 0;
-
     public void StartOrder()
     {
         if (!orderStarted)
         {
-            Instantiate(NPC_prefab[NPC_number], NPC_spawnLocation);
+            Instantiate(NPC_prefab[WorkInfo.NPC_number], NPC_spawnLocation);
             if(!FindObjectOfType<RootItem>().itemComplete)
             {
-                orderStarted = true; 
+                orderStarted = true;
                 OnOrderStarted.Invoke();
             }
         }
@@ -34,14 +32,16 @@ public class OrderConsole : MonoBehaviour
             {
                 Invoke("EndOrder", 3);
                 FindObjectOfType<NPCDialogue>().NextEnd();
+                Money.Current += FindObjectOfType<NPCLogic>().budget;
             }
         }
+        else return;
     }
 
     void EndOrder()
     {
         Destroy(NPC_spawnLocation.GetChild(0).gameObject);
-        NPC_number += 1;
+        WorkInfo.NPC_number += 1;
         orderStarted = false;
         FindObjectOfType<RootItem>().itemComplete = false;
         FindObjectOfType<RootItem>().EmptyParts();

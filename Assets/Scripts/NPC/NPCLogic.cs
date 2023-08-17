@@ -5,6 +5,7 @@ public class NPCLogic : MonoBehaviour
 {
     public List<MaterialType> wantedMaterials;
     public GameObject shape;
+    public float budget;
 
     GameObject root;
 

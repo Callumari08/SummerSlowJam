@@ -7,14 +7,19 @@ using UnityEngine.SceneManagement;
 
 public class TimeManager : MonoBehaviour
 {
+
+    public static TimeManager instance { get; private set; }
+
     public UnityEvent OnShiftEnd;
     public UnityEvent OnShiftStart;
     
     public float secondsBetweenIncrement;
-    bool currentlyHome;
+    bool currentlyHome = true;
 
     static Time currentTime;
     static int currentDay;
+
+    public TMP_Text infoText;
 
     public struct Time
     {
@@ -25,12 +30,28 @@ public class TimeManager : MonoBehaviour
     void Awake()
     {
         DontDestroyOnLoad(this.gameObject);
+        if (instance == null) {
+            instance = this;
+        } else {
+            Destroy (gameObject);  
+        }
         currentTime.Minute = 0;
         currentTime.Hour = 7;
-        StartCoroutine(Clock());
     }
 
-    IEnumerator Clock()
+    void Update()
+    {
+        if (currentTime.Hour == 7 && currentTime.Minute == 0)
+        {
+            infoText.text = "";
+        }
+        else
+        {
+            infoText.text = ($"Day {currentDay}: {currentTime.Hour:00}:{currentTime.Minute:00}");
+        }
+    }
+
+    public IEnumerator Clock()
     {
         if (currentlyHome == false)
         {
@@ -53,7 +74,6 @@ public class TimeManager : MonoBehaviour
             }
 
             yield return new WaitForSeconds(secondsBetweenIncrement);
-            Debug.Log(currentTime.Hour + ":" + currentTime.Minute);
             StartCoroutine(Clock());
         }
 

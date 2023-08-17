@@ -38,9 +38,9 @@ public class RootItem : MonoBehaviour
 
     public void SetReqMaterial(List<MaterialType> mat)
     {
-        foreach (Transform child in transform)
+        for(int i = 0; i < transform.childCount; i++)
         {
-            child.GetComponent<SubItem>().requiredMaterials = mat;
+            transform.GetChild(i).gameObject.GetComponent<SubItem>().requiredMaterial = mat[i];
         }
     }
     

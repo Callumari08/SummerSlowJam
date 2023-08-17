@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class SubItem : MonoBehaviour
 {
     public bool hasPart;
-    public List<MaterialType> requiredMaterials;
+    public MaterialType requiredMaterial;
     [Space]
     public UnityEvent OnMaterialMet;
 
@@ -22,12 +22,9 @@ public class SubItem : MonoBehaviour
     {
         if (collider.TryGetComponent(out Part part))
         {
-            foreach (MaterialType mat in requiredMaterials)
+            if (part.materialType == requiredMaterial)
             {
-                if (part.materialType == mat)
-                {
-                    MaterialMet(part);
-                }
+                MaterialMet(part);
             }
         }
     }

@@ -151,6 +151,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   wantedMaterials: 0000000002000000
   shape: {fileID: 982528363466902449, guid: c9fbd4a61054c924bb78e625b24e1715, type: 3}
+  budget: 6.24
 --- !u!1001 &6506091352774661691
 PrefabInstance:
   m_ObjectHideFlags: 0
