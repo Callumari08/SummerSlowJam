@@ -30,9 +30,9 @@ public class OrderConsole : MonoBehaviour
         {
             if(FindObjectOfType<RootItem>().itemComplete)
             {
-                Invoke("EndOrder", 3);
                 FindObjectOfType<NPCDialogue>().NextEnd();
                 Money.Current += FindObjectOfType<NPCLogic>().budget;
+                Invoke("EndOrder", 3);
             }
         }
         else return;

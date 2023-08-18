@@ -180,7 +180,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5041044263088464792}
-  - component: {fileID: 2254643769616978083}
   - component: {fileID: 8264628468304401038}
   m_Layer: 0
   m_Name: Text Bubble
@@ -205,29 +204,6 @@ Transform:
   - {fileID: 8681782204771539713}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2254643769616978083
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4731234450231913795}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cd7e6777977f1c245902ac78121f218e, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  startDialogue:
-  - 1
-  - 2
-  - 3
-  endDialogue: Thank You!
-  delay: 010000000300000002000000
-  visual:
-  - {fileID: 21300000, guid: 34ff00231543bba48b11d54afe0ebecd, type: 3}
-  - {fileID: 21300000, guid: 34ff00231543bba48b11d54afe0ebecd, type: 3}
-  txt: {fileID: 8878595452978358514}
-  sr: {fileID: 8264628468304401038}
 --- !u!212 &8264628468304401038
 SpriteRenderer:
   m_ObjectHideFlags: 0

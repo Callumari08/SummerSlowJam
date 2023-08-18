@@ -4,10 +4,20 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    public Rent rent;
+
     public void Open()
     {
-        TimeManager TM = FindObjectOfType<TimeManager>();
-        TM.GoToWork();
-        TM.StartCoroutine(TM.Clock());
+        if (rent.rentPaid)
+        {
+            TimeManager TM = FindObjectOfType<TimeManager>();
+            rent.rentPaid = false;
+            TM.GoToWork();
+            TM.StartCoroutine(TM.Clock());
+        }
+        else
+        {
+            Debug.Log("You Haven't paid rent");
+        }
     }
 }

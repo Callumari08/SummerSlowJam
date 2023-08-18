@@ -900,11 +900,11 @@ PrefabInstance:
     - target: {fileID: 1599220190872813185, guid: 103786e36ce50994ebf81ada4245d66b, type: 3}
       propertyPath: NPC_prefab.Array.data[0]
       value: 
-      objectReference: {fileID: 5127791932047538753, guid: 4b1cad49be59d3247bc364455ee57778, type: 3}
+      objectReference: {fileID: 7889233649535420335, guid: ff76adac4c4971141970141637ba991d, type: 3}
     - target: {fileID: 1599220190872813185, guid: 103786e36ce50994ebf81ada4245d66b, type: 3}
       propertyPath: NPC_prefab.Array.data[1]
       value: 
-      objectReference: {fileID: 5127791932047538753, guid: 2478c5fd9ebad7745aaec40fe77fdf60, type: 3}
+      objectReference: {fileID: 982271729951053521, guid: ff1b8b604f9725e45891c4771b45be17, type: 3}
     - target: {fileID: 2200716306767658744, guid: 103786e36ce50994ebf81ada4245d66b, type: 3}
       propertyPath: m_LocalPosition.x
       value: 6.09

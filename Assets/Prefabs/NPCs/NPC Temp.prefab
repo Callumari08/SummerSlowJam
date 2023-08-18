@@ -14,8 +14,9 @@ GameObject:
   - component: {fileID: 1812291298451453282}
   - component: {fileID: 9038527715860557157}
   - component: {fileID: 4884874272605167476}
+  - component: {fileID: 4536351988795366667}
   m_Layer: 0
-  m_Name: NPC1
+  m_Name: NPC Temp
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -65,7 +66,7 @@ MeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: eea15c1322b6a6c42969356d22cfd8ec, type: 2}
+  - {fileID: 2100000, guid: db248f3a7fa178b49bed300fc68656e6, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -149,9 +150,30 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5e43621cc555b6a4e851d22a795a7f4c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  wantedMaterials: 0000000002000000
-  shape: {fileID: 982528363466902449, guid: c9fbd4a61054c924bb78e625b24e1715, type: 3}
-  budget: 6.24
+  wantedMaterials: 
+  shape: {fileID: 0}
+  budget: 0
+--- !u!114 &4536351988795366667
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5127791932047538753}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cd7e6777977f1c245902ac78121f218e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  txt: {fileID: 2413186247875083977}
+  sr: {fileID: 2953125850289177781}
+  _startDialogue:
+    dialogue: []
+    visual: []
+    delay: 
+  _endDialogue:
+    dialogue: 
+    visual: {fileID: 0}
 --- !u!1001 &6506091352774661691
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -160,10 +182,6 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 64364473064048307}
     m_Modifications:
-    - target: {fileID: 2254643769616978083, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
-      propertyPath: visual.Array.size
-      value: 1
-      objectReference: {fileID: 0}
     - target: {fileID: 4731234450231913795, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
       propertyPath: m_Name
       value: Text Bubble
@@ -216,5 +234,21 @@ PrefabInstance:
 --- !u!4 &2287587341456864675 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: 5041044263088464792, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
+  m_PrefabInstance: {fileID: 6506091352774661691}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &2413186247875083977 stripped
+MonoBehaviour:
+  m_CorrespondingSourceObject: {fileID: 8878595452978358514, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
+  m_PrefabInstance: {fileID: 6506091352774661691}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9541d86e2fd84c1d9990edf0852d74ab, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!212 &2953125850289177781 stripped
+SpriteRenderer:
+  m_CorrespondingSourceObject: {fileID: 8264628468304401038, guid: c8f2e2b7257c6ec4ba31270071ede6e1, type: 3}
   m_PrefabInstance: {fileID: 6506091352774661691}
   m_PrefabAsset: {fileID: 0}

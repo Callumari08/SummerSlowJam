@@ -7,6 +7,7 @@ public class DisplayMoney : MonoBehaviour
 
     void Update()
     {
-        txt.text = $"${Money.Current}";
+        float amt = Mathf.Round(Money.Current * 100.0f) * 0.01f;
+        txt.text = $"${amt:0.00}";
     }
 }
