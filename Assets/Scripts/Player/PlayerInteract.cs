@@ -30,6 +30,11 @@ public class PlayerInteract : MonoBehaviour
                 {
                     hit_info.transform.gameObject.GetComponent<Rent>().Pay();
                 }
+
+                if ((hit_info.transform.gameObject.GetComponent("Bed") as Bed) != null)
+                {
+                    hit_info.transform.gameObject.GetComponent<Bed>().OpenPanel();
+                }
             }
         }
     }

@@ -31,7 +31,11 @@ public class OrderConsole : MonoBehaviour
             if(FindObjectOfType<RootItem>().itemComplete)
             {
                 FindObjectOfType<NPCDialogue>().NextEnd();
-                Money.Current += FindObjectOfType<NPCLogic>().budget;
+                if(!FindObjectOfType<NPCLogic>().moneyPaid)
+                {
+                    Money.Current += FindObjectOfType<NPCLogic>().budget;
+                    FindObjectOfType<NPCLogic>().moneyPaid = true;
+                }
                 Invoke("EndOrder", 3);
             }
         }
@@ -40,11 +44,18 @@ public class OrderConsole : MonoBehaviour
 
     void EndOrder()
     {
-        Destroy(NPC_spawnLocation.GetChild(0).gameObject);
-        WorkInfo.NPC_number += 1;
-        orderStarted = false;
-        FindObjectOfType<RootItem>().itemComplete = false;
-        FindObjectOfType<RootItem>().EmptyParts();
-        Destroy(FindObjectOfType<RootItem>().gameObject);
+        if (FindObjectOfType<NPCLogic>().moneyPaid)
+        {
+            foreach (Transform NPC in NPC_spawnLocation)
+            {
+                Destroy(NPC.gameObject);
+            }
+            FindObjectOfType<RootItem>().itemComplete = false;
+            FindObjectOfType<RootItem>().EmptyParts();
+            Destroy(FindObjectOfType<RootItem>().gameObject);
+            WorkInfo.NPC_number += 1;
+            orderStarted = false;
+        }
+        else return;
     }
 }

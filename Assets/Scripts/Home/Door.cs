@@ -4,14 +4,12 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
-    public Rent rent;
-
     public void Open()
     {
-        if (rent.rentPaid)
+        if (Rent.rentPaid)
         {
             TimeManager TM = FindObjectOfType<TimeManager>();
-            rent.rentPaid = false;
+            Rent.rentPaid = false;
             TM.GoToWork();
             TM.StartCoroutine(TM.Clock());
         }

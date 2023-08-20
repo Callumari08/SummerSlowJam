@@ -3,7 +3,7 @@ using UnityEngine;
 
 public static class Money
 {
-    public static float DefaultCurrent;
+    public static float DefaultCurrent = 5;
 
     /// <summary>
     /// The amount of money the player has.

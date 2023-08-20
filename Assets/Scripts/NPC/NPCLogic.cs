@@ -6,6 +6,7 @@ public class NPCLogic : MonoBehaviour
     public List<MaterialType> wantedMaterials;
     public GameObject shape;
     public float budget;
+    public bool moneyPaid;
 
     GameObject root;
 

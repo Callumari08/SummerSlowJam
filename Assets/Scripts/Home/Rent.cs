@@ -5,7 +5,7 @@ using UnityEngine;
 public class Rent : MonoBehaviour
 {
     public float rentAmount;
-    public bool rentPaid;
+    public static bool rentPaid;
 
     public void Pay()
     {
