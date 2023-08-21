@@ -8,6 +8,7 @@ public class SaveManager : MonoBehaviour
     {
         public float currentMoneyAmount;
         public int currentNpcNumber;
+        public int currentSavedDay;
         public bool rentCurrentlyPaid;
     }
 
@@ -18,13 +19,13 @@ public class SaveManager : MonoBehaviour
     void Start()
     {
         path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "Save.json";
-        Debug.Log(path);
     }
 
     public void Save()
     {
         saveInfo.currentMoneyAmount = Money.Current;
         saveInfo.currentNpcNumber = WorkInfo.NPC_number;
+        saveInfo.currentSavedDay = TimeManager.currentDay;
         saveInfo.rentCurrentlyPaid = Rent.rentPaid;
 
         string savePath = path;
@@ -37,14 +38,14 @@ public class SaveManager : MonoBehaviour
 
     public void Load()
     {
-        Money.Current = saveInfo.currentMoneyAmount;
-        WorkInfo.NPC_number = saveInfo.currentNpcNumber;
-        Rent.rentPaid = saveInfo.rentCurrentlyPaid;
-
         using StreamReader reader = new StreamReader(path);
         string json = reader.ReadToEnd();
         
         SaveInfo newSaveInfo = JsonUtility.FromJson<SaveInfo>(json);
-        saveInfo = newSaveInfo;
+
+        Money.Current = newSaveInfo.currentMoneyAmount;
+        WorkInfo.NPC_number = newSaveInfo.currentNpcNumber;
+        TimeManager.currentDay = newSaveInfo.currentSavedDay;
+        Rent.rentPaid = newSaveInfo.rentCurrentlyPaid;
     }
 }

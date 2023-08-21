@@ -17,7 +17,7 @@ public class TimeManager : MonoBehaviour
     bool currentlyHome = true;
 
     static Time currentTime;
-    static int currentDay;
+    public static int currentDay;
 
     public TMP_Text infoText;
 

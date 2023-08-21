@@ -35,12 +35,22 @@ public class PlayerController : MonoBehaviour
     {
         bounds = capsuleCollider.bounds;
 
-        CameraRotation();
+        if (Cursor.lockState == CursorLockMode.Locked) CameraRotation();
     }
 
     private void FixedUpdate()
     {
-        Move();
+        if (Cursor.lockState == CursorLockMode.Locked)
+        {
+            rb.freezeRotation = false;
+            Move();
+        }
+        
+        else 
+        {
+            rb.freezeRotation = true;
+            rb.velocity = Vector3.zero;
+        }
     }
 
     void Move()
