@@ -4,18 +4,31 @@ using UnityEngine;
 
 public class Door : MonoBehaviour
 {
+    TransitionManager transition;
+    TimeManager time;
+
+    void Awake()
+    {
+        transition = FindObjectOfType<TransitionManager>();
+        time = FindObjectOfType<TimeManager>();
+    }
+
     public void Open()
     {
         if (Rent.rentPaid)
         {
-            TimeManager TM = FindObjectOfType<TimeManager>();
-            Rent.rentPaid = false;
-            TM.GoToWork();
-            TM.StartCoroutine(TM.Clock());
+            time.OnShiftStart.Invoke();
+            Invoke("Close", transition.transitionDelay);
         }
         else
         {
             Debug.Log("You Haven't paid rent");
         }
+    }
+
+    void Close()
+    {
+        time.GoToWork();
+        Rent.rentPaid = false;
     }
 }

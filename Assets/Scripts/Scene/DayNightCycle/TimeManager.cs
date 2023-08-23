@@ -82,8 +82,9 @@ public class TimeManager : MonoBehaviour
 
     public void GoToWork()
     {
-        OnShiftStart.Invoke();
         currentDay += 1;
         currentlyHome = false;
+
+        StartCoroutine(Clock());
     }
 }
