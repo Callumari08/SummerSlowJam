@@ -10,9 +10,9 @@ public class TimeManager : MonoBehaviour
 
     public static TimeManager instance { get; private set; }
 
-    public UnityEvent OnShiftEnd;
-    public UnityEvent OnShiftStart;
-    
+    public string homeScene;
+    public string workScene;
+
     public float secondsBetweenIncrement;
     bool currentlyHome = true;
 
@@ -41,13 +41,14 @@ public class TimeManager : MonoBehaviour
 
     void Update()
     {
-        if (currentTime.Hour == 7 && currentTime.Minute == 0)
+        if (SceneManager.GetActiveScene().name == workScene)
         {
-            infoText.text = "";
+            infoText.gameObject.SetActive(true);
+            infoText.text = ($"Day {currentDay}: {currentTime.Hour:00}:{currentTime.Minute:00}");
         }
         else
         {
-            infoText.text = ($"Day {currentDay}: {currentTime.Hour:00}:{currentTime.Minute:00}");
+            infoText.gameObject.SetActive(false);
         }
     }
 
@@ -67,7 +68,7 @@ public class TimeManager : MonoBehaviour
 
             if (currentTime.Hour == 18)
             {
-                OnShiftEnd.Invoke();
+                FindObjectOfType<TransitionManager>().StartAnimation(homeScene);
                 currentTime.Minute = 0;
                 currentTime.Hour = 7;
                 currentlyHome = true;
@@ -85,6 +86,7 @@ public class TimeManager : MonoBehaviour
         currentDay += 1;
         currentlyHome = false;
 
+        FindObjectOfType<TransitionManager>().StartAnimation(workScene);
         StartCoroutine(Clock());
     }
 }

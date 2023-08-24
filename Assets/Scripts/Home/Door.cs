@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class Door : MonoBehaviour
 {
     TransitionManager transition;
     TimeManager time;
+    bool hasOpened = false;
+
+    public UnityEvent OnOpen;
 
     void Awake()
     {
@@ -15,14 +19,18 @@ public class Door : MonoBehaviour
 
     public void Open()
     {
-        if (Rent.rentPaid)
+        if (hasOpened == false)
         {
-            time.OnShiftStart.Invoke();
-            Invoke("Close", transition.transitionDelay);
-        }
-        else
-        {
-            Debug.Log("You Haven't paid rent");
+            if (Rent.rentPaid)
+            {
+                hasOpened = true;
+                OnOpen.Invoke();
+                Invoke("Close", transition.transitionDelay);
+            }
+            else
+            {
+                Debug.Log("You Haven't paid rent");
+            }
         }
     }
 
@@ -30,5 +38,6 @@ public class Door : MonoBehaviour
     {
         time.GoToWork();
         Rent.rentPaid = false;
+        hasOpened = false;
     }
 }
