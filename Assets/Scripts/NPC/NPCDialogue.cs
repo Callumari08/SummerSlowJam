@@ -7,6 +7,8 @@ public class NPCDialogue : MonoBehaviour
 {
     public TMP_Text txt;
     public SpriteRenderer sr;
+    public SpriteRenderer faceEyes;
+    public SpriteRenderer faceMouth;
 
     [System.Serializable]
     public struct startDialogue
@@ -14,6 +16,8 @@ public class NPCDialogue : MonoBehaviour
         public List<string> dialogue;
         public List<Sprite> visual;
         public List<int> delay;
+        public List<Sprite> eyes;
+        public List<Sprite> mouth;
     }
 
     [System.Serializable]
@@ -39,6 +43,16 @@ public class NPCDialogue : MonoBehaviour
         {
             txt.text = _startDialogue.dialogue[i];
             yield return new WaitForSeconds(_startDialogue.delay[i]);
+
+            for(int o = 0; o < _startDialogue.eyes.Count; o++)
+            {
+                faceEyes.sprite = _startDialogue.eyes[o];
+            }
+
+            for(int o = 0; o < _startDialogue.mouth.Count; o++)
+            {
+                faceMouth.sprite = _startDialogue.mouth[o];
+            }
         }
     }
 
