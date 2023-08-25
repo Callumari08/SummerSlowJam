@@ -1126,6 +1126,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 1361076327107182877, guid: 43f795a94386a7449a56c441bf8c40da, type: 3}
+      propertyPath: OutputAudioMixerGroup
+      value: 
+      objectReference: {fileID: 24300002, guid: 1b06110907bd71d4abc029b7e3fcedac, type: 2}
     - target: {fileID: 3899362762477901554, guid: 43f795a94386a7449a56c441bf8c40da, type: 3}
       propertyPath: m_Name
       value: SFX Manager
