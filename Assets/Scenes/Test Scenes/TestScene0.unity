@@ -320,6 +320,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   settingsPanel: {fileID: 11211447}
   volumeSlider: {fileID: 1981716235}
+  volumeText: {fileID: 1790332402}
   mix: {fileID: 24100000, guid: 1b06110907bd71d4abc029b7e3fcedac, type: 2}
 --- !u!1 &350352349
 GameObject:
@@ -2418,7 +2419,7 @@ RectTransform:
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
   m_AnchoredPosition: {x: 0, y: 22.323883}
-  m_SizeDelta: {x: 200, y: 50}
+  m_SizeDelta: {x: 256.959, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1790332402
 MonoBehaviour:
@@ -2440,7 +2441,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Volume
+  m_text: Volume 100%
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -2734,10 +2735,10 @@ MonoBehaviour:
   m_FillRect: {fileID: 1342206053}
   m_HandleRect: {fileID: 1609522457}
   m_Direction: 0
-  m_MinValue: -80
-  m_MaxValue: 0
+  m_MinValue: 0.0001
+  m_MaxValue: 1
   m_WholeNumbers: 0
-  m_Value: 0
+  m_Value: 1
   m_OnValueChanged:
     m_PersistentCalls:
       m_Calls:
