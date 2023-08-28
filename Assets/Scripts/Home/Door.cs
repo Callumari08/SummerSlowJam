@@ -10,6 +10,7 @@ public class Door : MonoBehaviour
     bool hasOpened = false;
 
     public UnityEvent OnOpen;
+    public GameObject AlertPanel;
 
     void Awake()
     {
@@ -29,9 +30,15 @@ public class Door : MonoBehaviour
             }
             else
             {
-                Debug.Log("You Haven't paid rent");
+                AlertPanel.SetActive(true);
+                Invoke("EndAlert", 2);
             }
         }
+    }
+
+    void EndAlert()
+    {
+        AlertPanel.SetActive(false);
     }
 
     void Close()

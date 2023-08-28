@@ -52,7 +52,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 3292171597008975014}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 
@@ -283,37 +283,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 68ec28408f29ebb4690f29ac16698caa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  OnShiftEnd:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: _SceneManager, Assembly-CSharp
-        m_MethodName: Change_Scene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: TestScene2
-          m_BoolArgument: 0
-        m_CallState: 2
-  OnShiftStart:
-    m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 0}
-        m_TargetAssemblyTypeName: _SceneManager, Assembly-CSharp
-        m_MethodName: Change_Scene
-        m_Mode: 5
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: TestScene1
-          m_BoolArgument: 0
-        m_CallState: 2
-  secondsBetweenIncrement: 0.5
+  homeScene: Home
+  workScene: Work
+  secondsBetweenIncrement: 2.5
   infoText: {fileID: 100275516841219384}
 --- !u!114 &1049459443229858603
 MonoBehaviour:
@@ -328,6 +300,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   txt: {fileID: 5759491901157879658}
+  menuScene: MainMenu
 --- !u!1 &8297614134141282292
 GameObject:
   m_ObjectHideFlags: 0
@@ -380,7 +353,7 @@ MonoBehaviour:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8297614134141282292}
-  m_Enabled: 1
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f4688fdb7df04437aeb418b961361dc5, type: 3}
   m_Name: 

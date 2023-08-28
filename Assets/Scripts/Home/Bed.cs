@@ -17,19 +17,13 @@ public class Bed : MonoBehaviour
     public void OpenPanel()
     {
         Cursor.lockState = CursorLockMode.None;
-        foreach (Transform child in bedUI)
-        {
-            child.gameObject.SetActive(true);
-        }
+        bedUI.gameObject.SetActive(true);
         OnOpen.Invoke();
     }
 
     public void ClosePanel()
     {
         Cursor.lockState = CursorLockMode.Locked;
-        foreach (Transform child in bedUI)
-        {
-            child.gameObject.SetActive(false);
-        }
+        bedUI.gameObject.SetActive(false);
     }
 }
