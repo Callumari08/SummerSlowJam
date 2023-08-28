@@ -15,7 +15,7 @@ public class PhysicsPickup : MonoBehaviour
         Ray camera_ray = cam.ViewportPointToRay(new Vector3(0.5f, 0.5f, 0f));
         if(Input.GetMouseButton(0))
         {            
-            if(Physics.Raycast(camera_ray, out RaycastHit hit_info, pickupRange, pickupMask))
+            if(Physics.Raycast(camera_ray, out RaycastHit hit_info, pickupRange, pickupMask) && !currentObject)
             {
                 currentObject = hit_info.rigidbody;
             }

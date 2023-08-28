@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Rendering.LookDev;
+using UnityEngine.UI;
 using UnityEngineInternal;
 
 public class PlayerController : MonoBehaviour
@@ -13,12 +14,12 @@ public class PlayerController : MonoBehaviour
     [Range(0f, 100f)]
     public float maxSlopeAngle = 55;
     public float gravity = 9;
-    public Camera cam; 
+    public Camera cam;
+    public bool isGrounded;
 
     CapsuleCollider capsuleCollider;
     Rigidbody rb;
     Bounds bounds;
-    bool isGrounded = true;
     float yaw;
     float pitch;
 
@@ -40,6 +41,8 @@ public class PlayerController : MonoBehaviour
 
     private void FixedUpdate()
     {
+        isGrounded = GroundCheck();
+
         if (Cursor.lockState == CursorLockMode.Locked)
         {
             rb.freezeRotation = false;
@@ -51,6 +54,9 @@ public class PlayerController : MonoBehaviour
             rb.freezeRotation = true;
             rb.velocity = Vector3.zero;
         }
+
+        if (Input.GetButton("Jump"))
+            Jump();
     }
 
     void Move()
@@ -76,6 +82,17 @@ public class PlayerController : MonoBehaviour
         cam.transform.rotation = Quaternion.Euler(pitch, yaw, 0);
     }
 
+    bool GroundCheck() => 
+        Physics.SphereCast(transform.position, 0.5f, transform.position + Vector3.down, out _, 0.05f, LayerMask.GetMask("Floor"));
+
+    void Jump()
+    {
+        if (isGrounded)
+        {
+            rb.AddForce(transform.up * jumpForce);
+        }
+    }
+
     Vector3 CollideAndSlide(Vector3 vel, Vector3 pos, int depth, bool gravityPass, Vector3 velInit)
     {
         const float skinWidth = 0.015f;
@@ -93,7 +110,7 @@ public class PlayerController : MonoBehaviour
 
         if (Physics.CapsuleCast(capPos + new Vector3(0f, capsuleCollider.height / 2f), 
             capPos - new Vector3(0f, capsuleCollider.height / 2f), 
-            capsuleCollider.radius, vel.normalized, out RaycastHit hit, dist))
+            capsuleCollider.radius, vel.normalized, out RaycastHit hit, dist) && !hit.collider.isTrigger)
         {
             Vector3 snapToSurface = vel.normalized * (hit.distance - skinWidth);
             Vector3 leftover = vel - snapToSurface;
