@@ -1,5 +1,8 @@
+using System.Collections.Generic;
 using System.IO;
+using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class SaveManager : MonoBehaviour
 {
@@ -12,6 +15,8 @@ public class SaveManager : MonoBehaviour
         public bool rentCurrentlyPaid;
     }
 
+    public static List<Part> parts;
+
     public SaveInfo saveInfo;
 
     string path;
@@ -19,6 +24,8 @@ public class SaveManager : MonoBehaviour
     void Start()
     {
         path = Application.persistentDataPath + Path.AltDirectorySeparatorChar + "Save.json";
+
+        SceneManager.sceneLoaded += RefundMaterials;
     }
 
     public void Save()
@@ -47,5 +54,15 @@ public class SaveManager : MonoBehaviour
         WorkInfo.NPC_number = newSaveInfo.currentNpcNumber;
         TimeManager.currentDay = newSaveInfo.currentSavedDay;
         Rent.rentPaid = newSaveInfo.rentCurrentlyPaid;
+    }
+
+    void RefundMaterials(Scene scene, LoadSceneMode mode)
+    {
+        foreach (Part part in parts)
+        {
+            Money.Current += part.price;
+        }
+
+        parts.Clear();
     }
 }

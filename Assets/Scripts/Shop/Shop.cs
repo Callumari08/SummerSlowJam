@@ -50,7 +50,10 @@ public class Shop : MonoBehaviour
 
             Money.Current -= product.Price;
 
-            Instantiate(product.productGo, instantiatePos.position, Quaternion.identity);
+            GameObject go = Instantiate(product.productGo, instantiatePos.position, Quaternion.identity);
+
+            if (go.TryGetComponent(out Part part))
+                part.price = product.Price;
         }
         else
         {
