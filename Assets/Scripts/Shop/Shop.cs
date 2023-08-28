@@ -46,6 +46,7 @@ public class Shop : MonoBehaviour
         if (Money.Current >= product.Price)
         {
             onBuy.Invoke();
+            print($"buy {Money.Current}");
 
             Money.Current -= product.Price;
 
@@ -53,6 +54,7 @@ public class Shop : MonoBehaviour
         }
         else
         {
+            print($"no {Money.Current}");
             onInsufficentFunds.Invoke();
         }
     }
