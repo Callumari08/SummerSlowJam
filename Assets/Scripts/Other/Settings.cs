@@ -7,6 +7,7 @@ using TMPro;
 
 public class Settings : MonoBehaviour
 {
+    public GameObject mainPanel;
     public GameObject settingsPanel;
     public Slider volumeSlider;
     public TMP_Text volumeText;
@@ -14,8 +15,8 @@ public class Settings : MonoBehaviour
     bool isFullscreen;
 
     void Start() { settingsPanel.SetActive(false); }
-    public void OpenPanel() { settingsPanel.SetActive(true); }
-    public void ClosePanel() { settingsPanel.SetActive(false); }
+    public void OpenPanel() { settingsPanel.SetActive(true); mainPanel.SetActive(false); }
+    public void ClosePanel() { settingsPanel.SetActive(false); mainPanel.SetActive(true); }
 
     public void OnFullToggleChange(bool tickOn)
     {
