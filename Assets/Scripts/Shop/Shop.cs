@@ -42,7 +42,6 @@ public class Shop : MonoBehaviour
     public void Buy()
     {
         Product product = products[Selected];
-        Money.Current = 20f;
 
         if (Money.Current >= product.Price)
         {
