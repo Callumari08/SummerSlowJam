@@ -22,23 +22,11 @@ public class NPCLogic : MonoBehaviour
         SpawnRoot();
 
         //Instancing
-        Instantiate(Hairs[Random.Range(0,Hairs.Count)], hairPos.position, hairPos.rotation);
-        if(randomBool())
-        {
-            Instantiate(Glasses[Random.Range(0,Glasses.Count)], glassPos.position, glassPos.rotation);
-        }
+        Instantiate(Hairs[Random.Range(0,Hairs.Count)], hairPos);
+        Instantiate(Glasses[Random.Range(0,Glasses.Count)], glassPos);
         
     }
 
-    bool randomBool()
-    {
-        if (Random.value >= 0.5)
-        {
-            return true;
-        }
-        return false;
-    }
-    
     void Update()
     {
         if(FindObjectOfType<OrderConsole>().orderStarted) FindObjectOfType<RootItem>().SetReqMaterial(wantedMaterials);

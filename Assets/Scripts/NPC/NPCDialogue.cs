@@ -30,7 +30,12 @@ public class NPCDialogue : MonoBehaviour
     public startDialogue _startDialogue;
     public endDialogue _endDialogue;
 
-    void Awake() => StartCoroutine(NextStart());
+    void Awake() 
+    {
+        StartCoroutine(NextStart());
+        faceEyes.sprite = _startDialogue.eyes[0];
+        faceMouth.sprite = _startDialogue.mouth[0];
+    }
 
     IEnumerator NextStart()
     {
