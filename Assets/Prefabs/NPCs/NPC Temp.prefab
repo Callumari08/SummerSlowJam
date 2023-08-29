@@ -425,6 +425,7 @@ MonoBehaviour:
   - {fileID: 2313742887517094650, guid: a8b10c9f9b6e46a419116ed3ee8d8c9a, type: 3}
   - {fileID: 8423798006791984190, guid: 69c30f7d53c4798489d07ed81ee54592, type: 3}
   Glasses:
+  - {fileID: 2653347478466329660, guid: d1391b6abc5ef2542911a78869b8607c, type: 3}
   - {fileID: 4947331228642652129, guid: 4b156e7af3d72dd469c7ea87008d46c6, type: 3}
   hairPos: {fileID: 8963371261930247290}
   glassPos: {fileID: 1748176066327209798}
