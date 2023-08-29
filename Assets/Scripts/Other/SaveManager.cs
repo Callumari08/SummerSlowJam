@@ -15,7 +15,7 @@ public class SaveManager : MonoBehaviour
         public bool rentCurrentlyPaid;
     }
 
-    public static List<Part> parts;
+    public static List<Part> parts = new List<Part>();
 
     public SaveInfo saveInfo;
 
