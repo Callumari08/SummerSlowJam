@@ -35,6 +35,11 @@ public class PlayerInteract : MonoBehaviour
                 {
                     hit_info.transform.gameObject.GetComponent<Bed>().OpenPanel();
                 }
+
+                if ((hit_info.transform.gameObject.GetComponent("Computer") as Computer) != null)
+                {
+                    hit_info.transform.gameObject.GetComponent<Computer>().OpenPanel();
+                }
             }
         }
     }

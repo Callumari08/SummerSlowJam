@@ -34,6 +34,7 @@ public class Shop : MonoBehaviour
     public UnityEvent onBuy;
     public UnityEvent onInsufficentFunds;
 
+    [SerializeField] float shootForce = 2.5f;
     [SerializeField] RectTransform listGo;
     [SerializeField] Transform instantiatePos;
 
@@ -54,6 +55,11 @@ public class Shop : MonoBehaviour
 
             if (go.TryGetComponent(out Part part))
                 part.price = product.Price;
+
+            if (go.TryGetComponent(out Rigidbody rb))
+            {
+                rb.AddForce(transform.right * shootForce);
+            }
         }
         else
         {
